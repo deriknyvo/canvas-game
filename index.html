@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+</head>
+<body>
+    <canvas id="my-canvas" width="300" height="300">
+        Seu navegador não suporta o Canvas do HTML5. <br>
+        Procure atualizá-lo.
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById('my-canvas');
+        const context = canvas.getContext('2d');
+
+        context.fillStyle = 'gray'
+        context.strokeStyle = 'black';
+        context.lineWidth = 2;
+        
+        context.beginPath();
+        context.arc(50, 50, 40, 90 * Math.PI / 180, 270 * Math.PI / 180, false);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.arc(150, 50, 40, 90 * Math.PI / 180, 270 * Math.PI / 180, true);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.arc(250, 50, 40, 0, 2 * Math.PI);
+        context.fill();
+        context.stroke();
+    </script>
+</body>
+</html>

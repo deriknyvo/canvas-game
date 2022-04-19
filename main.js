@@ -1,15 +1,13 @@
 const canvas = document.getElementById('my-canvas');
 const context = canvas.getContext('2d');
 
-const img = new Image();
-img.src = 'img/ovni.png';
+const image = new Image();
+image.src = 'img/explosao.png';
 
-img.onload = (event) => {
-    let position = 20;
-
-    for (let index = 0; index < 5; index++) {
-        context.beginPath();
-        context.drawImage(img, position, 20, 64, 32);
-        position += 70;
-    }
+image.onload = () => {
+    context.drawImage(
+        image,
+        80, 10, 60, 65,
+        20, 20, 60, 65
+    );
 };

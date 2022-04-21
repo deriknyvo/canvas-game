@@ -1,7 +1,7 @@
 export class Ball {
     context = null;
-    positionX = 0;
-    positionY = 0;
+    x = 0;
+    y = 0;
     speedX = 0;
     speedY = 0;
     color = 'black';
@@ -12,10 +12,10 @@ export class Ball {
     }
 
     update() {
-        const xLessThanRadius = this.positionX < this.radius;
-        const xMoreThanCanvasWidth = this.positionX > this.context.canvas.width - this.radius;
-        const yLessThanRadius = this.positionY < this.radius;
-        const yMoreThanCanvasWidth = this.positionY > this.context.canvas.height - this.radius;
+        const xLessThanRadius = this.x < this.radius;
+        const xMoreThanCanvasWidth = this.x > this.context.canvas.width - this.radius;
+        const yLessThanRadius = this.y < this.radius;
+        const yMoreThanCanvasWidth = this.y > this.context.canvas.height - this.radius;
 
         if (xLessThanRadius || xMoreThanCanvasWidth) {
             this.speedX *= -1;
@@ -25,8 +25,8 @@ export class Ball {
             this.speedY *= -1;
         }
         
-        this.positionX += this.speedX;
-        this.positionY += this.speedY;
+        this.x += this.speedX;
+        this.y += this.speedY;
     }
 
     draw() {
@@ -37,7 +37,7 @@ export class Ball {
         const startAngle = 0;
         const finishAngle = 2 * Math.PI; 
 
-        this.context.arc(this.positionX, this.positionY, this.radius, finishAngle, startAngle);
+        this.context.arc(this.x, this.y, this.radius, finishAngle, startAngle);
         this.context.fill();
         this.context.restore();
     }

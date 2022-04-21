@@ -5,28 +5,28 @@ const canvas = document.getElementById('my-canvas');
 const context = canvas.getContext('2d');
 
 const redBall = new Ball(context);
-redBall.positionX = 100;
-redBall.positionY = 200;
+redBall.x = 100;
+redBall.y = 200;
 redBall.speedX = 20;
 redBall.speedY = -10;
 redBall.color = 'red';
-redBall.radius = 20;
+redBall.radius = 2;
 
 const blueBall = new Ball(context);
-blueBall.positionX = 200;
-blueBall.positionY = 100;
+blueBall.x = 200;
+blueBall.y = 100;
 blueBall.speedX = -10;
 blueBall.speedY = 20;
 blueBall.color = 'blue';
-blueBall.radius = 30;
+blueBall.radius = 3;
 
 const greenBall = new Ball(context);
-greenBall.positionX = 159;
-greenBall.positionY = 135;
+greenBall.x = 159;
+greenBall.y = 135;
 greenBall.speedX = -10;
 greenBall.speedY = 20;
 greenBall.color = 'green';
-greenBall.radius = 15;
+greenBall.radius = 5;
 
 const animation = new Animation(context);
 animation.setSprite(redBall);
